@@ -19,7 +19,7 @@ const CTA = ({ label, title, body, ctas }) => (
           <CTALink
             key={`cta_${i}`}
             {...c}
-            buttonActionClass="mx-auto ml-4 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg"
+            buttonActionClass="mx-auto ml-4 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-2 px-4 shadow-lg"
           />
         </div>
       ))}
