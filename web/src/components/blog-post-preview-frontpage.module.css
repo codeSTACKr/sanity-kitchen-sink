@@ -1,9 +1,9 @@
 @import "../styles/custom-media.css";
 @import "../styles/custom-properties.css";
 
-.root {
+/* .root {
   margin: 2em 0 4em;
-}
+} */
 
 .headline {
   font-size: var(--font-micro-size);
