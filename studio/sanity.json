@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "codeSTACKr"
+    "name": "codeSTACKr Blog"
   },
   "api": {
-    "projectId": "jahw3iqh",
+    "projectId": "xs6ohj1p",
     "dataset": "production"
   },
   "plugins": [
