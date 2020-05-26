@@ -6,6 +6,7 @@ import {
   filterOutDocsPublishedInTheFuture,
 } from "../lib/helpers";
 import BlogPostPreviewList from "../components/blog-post-preview-list";
+import BlogPostPreviewGrid from "../components/blog-post-preview-grid";
 import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import SEO from "../components/seo";
@@ -51,25 +52,33 @@ const IndexPage = (props) => {
     );
   }
 
+  console.log(data);
+
   const site = (data || {}).site;
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts)
-        .filter(filterOutDocsWithoutSlugs)
-        .filter(filterOutDocsPublishedInTheFuture)
+      .filter(filterOutDocsWithoutSlugs)
+      .filter(filterOutDocsPublishedInTheFuture)
     : [];
 
   if (!site) {
     console.warn(
-      'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
+      'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.',
     );
   }
 
   return (
-    <Layout textWhite={false}>
-      <SEO title={site.title || 'Missing title'} description={site.description || 'Missing description'} keywords={site.keywords || []} />
+    <Layout textWhite={true}>
+      <SEO
+        title={site.title || "Missing title"}
+        description={site.description || "Missing description"}
+        keywords={site.keywords || []}
+      />
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
-        <div className="py-6">{postNodes && <BlogPostPreviewList nodes={postNodes} />}</div>
+        <div className="py-6">
+          {postNodes && <BlogPostPreviewList nodes={postNodes} />}
+        </div>
       </Container>
     </Layout>
   );

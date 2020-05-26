@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "Kitchen Sink"
+    "name": "codeSTACKr"
   },
   "api": {
-    "projectId": "xs6ohj1p",
+    "projectId": "jahw3iqh",
     "dataset": "production"
   },
   "plugins": [

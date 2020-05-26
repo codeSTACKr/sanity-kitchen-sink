@@ -1,5 +1,5 @@
-@import '../styles/custom-media.css';
-@import '../styles/custom-properties.css';
+@import "../styles/custom-media.css";
+@import "../styles/custom-properties.css";
 
 .root {
   display: blog;
@@ -7,12 +7,23 @@
   text-decoration: none;
 }
 
+.hover {
+  transform: translateY(0);
+  transition: transform 300ms ease;
+}
+
+@media (hover: hover) {
+  .hover:hover {
+    transform: translateY(-0.5em);
+  }
+}
+
 .inList {
   composes: root;
 
   @media (--media-min-medium) {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr;
     grid-gap: 2em;
   }
 }
@@ -24,7 +35,7 @@
 .leadMediaThumb {
   position: relative;
   padding-bottom: 66.666%;
-  background: var(--color-very-light-gray);
+  /* background: var(--color-very-light-gray); */
 
   @nest & img {
     position: absolute;
@@ -33,20 +44,22 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 1em 1em 0 0;
   }
 }
 
 .text {
-  /* empty */
+  border-radius: 0 0 1em 1em;
+  box-shadow: 0 6px 2px rgba(0, 0, 0, 0.3);
+  padding: 1em;
 }
 
 .title {
-  @media (hover: hover) {
+  /* @media (hover: hover), (--media-min-medium) {
     @nest .root:hover & {
       text-decoration: underline;
     }
-  }
-
+  } */
   @media (--media-min-medium) {
     @nest .inList & {
       margin-top: 0;
