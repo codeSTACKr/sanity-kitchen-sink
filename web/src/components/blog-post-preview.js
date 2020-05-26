@@ -11,7 +11,8 @@ import { responsiveTitle3 } from "./typography.module.css";
 function BlogPostPreview(props) {
   return (
     <Link
-      className={props.isInList ? styles.inList : styles.inGrid}
+      className={(props.isInList ? styles.inList : styles.inGrid) + " " +
+        styles.hover}
       to={getBlogUrl(props.slug.current)}
     >
       <div className={styles.leadMediaThumb}>
@@ -33,7 +34,9 @@ function BlogPostPreview(props) {
             <PortableText blocks={props._rawExcerpt} />
           </div>
         )}
-        <div className={styles.date}>{format(props.publishedAt, "MMMM Do, YYYY")}</div>
+        <div className={styles.date}>
+          {format(props.publishedAt, "MMMM Do, YYYY")}
+        </div>
       </div>
     </Link>
   );

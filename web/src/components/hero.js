@@ -4,17 +4,24 @@ import clientConfig from "../../client-config";
 import CTALink from "./CTALink";
 
 import { getFluidGatsbyImage } from "gatsby-source-sanity";
-const maybeImage = illustration => {
+const maybeImage = (illustration) => {
   let img = null;
-  if (illustration && illustration.image && illustration.image.asset && !illustration.disabled) {
+  if (
+    illustration && illustration.image && illustration.image.asset &&
+    !illustration.disabled
+  ) {
     const fluidProps = getFluidGatsbyImage(
       illustration.image.asset._id,
       { maxWidth: 960 },
-      clientConfig.sanity
+      clientConfig.sanity,
     );
 
     img = (
-      <img className="w-full md:w-4/5 z-50" src={fluidProps.src} alt={illustration.image.alt} />
+      <img
+        className="w-full md:w-4/5 z-50 mt-10 mb-10 mx-auto"
+        src={fluidProps.src}
+        alt={illustration.image.alt}
+      />
     );
   }
   return img;
@@ -23,11 +30,18 @@ const maybeImage = illustration => {
 function Hero(props) {
   const img = maybeImage(props.illustration);
   return (
-    <div className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
+    <div
+      className="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center"
+    >
+      <div className="bg-blur"></div>
       {/* Left col */}
-      <div className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+      <div
+        className="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left"
+      >
         <p className="uppercase tracking-loose w-full">{props.label}</p>
-        <h1 className="my-4 text-5xl font-bold leading-tight">{props.heading}</h1>
+        <h1 className="my-4 text-5xl font-bold leading-tight">
+          {props.heading}
+        </h1>
         <div className="leading-normal text-2xl mb-8">
           <PortableText blocks={props.tagline} />
         </div>

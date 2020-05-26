@@ -27,3 +27,7 @@
   --font-title1-size: calc(49 / var(--unit) * 1rem); /* 49px */
   --font-title1-line-height: calc(57 / 49); /* 57px */
 }
+
+.bg-orange {
+  background-color: #ff652f;
+}

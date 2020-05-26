@@ -7,13 +7,13 @@ module.exports = () => ({
         "color-mod-function": { unresolved: "warn" },
         "nesting-rules": true,
         "custom-media-queries": {
-          preserve: false
+          preserve: false,
         },
         "custom-properties": {
-          preserve: false
-        }
-      }
+          preserve: false,
+        },
+      },
     }),
-    require("tailwindcss")
-  ]
+    require("tailwindcss"),
+  ],
 });

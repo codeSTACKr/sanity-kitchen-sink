@@ -2,6 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+.bg-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0.1)), url("../images/code.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  filter: blur(8px);
+  z-index: -1;
+}
+
 /*
 blockquote {
   font-family: monospace;

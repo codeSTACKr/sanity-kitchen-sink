@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 
 import Hero from "../components/hero";
 import InfoRows from "../components/InfoRows";
+import BlogPreview from "../components/BlogPreview";
 import CTAColumns from "../components/cta-columns";
 import CTA from "../components/cta";
 import Pricing from "../components/pricing";
@@ -45,6 +46,8 @@ export const query = graphql`
 const Page = (props) => {
   const { data, errors } = props;
 
+  // console.log(data);
+
   if (errors) {
     return (
       <Layout>
@@ -57,7 +60,7 @@ const Page = (props) => {
 
   if (!site) {
     throw new Error(
-      'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
+      'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.',
     );
   }
 
@@ -73,6 +76,9 @@ const Page = (props) => {
           break;
         case "infoRows":
           el = <InfoRows key={c._key} {...c} />;
+          break;
+        case "blogPreview":
+          el = <BlogPreview key={c._key} {...c} posts={data.posts} />;
           break;
         case "hero":
           el = <Hero key={c._key} {...c} />;
@@ -116,7 +122,7 @@ const Page = (props) => {
         description={site.description}
         keywords={site.keywords}
         bodyAttr={{
-          class: "leading-normal tracking-normal text-white gradient",
+          class: "leading-normal tracking-normal text-white bg-black",
         }}
         gradient={gradient}
       />
