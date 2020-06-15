@@ -24,7 +24,8 @@
     "@sanity/color-input",
     "mux-input",
     "google-analytics",
-    "@sanity/production-preview"
+    "@sanity/production-preview",
+    "datatable"
   ],
   "parts": [
     {

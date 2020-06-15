@@ -52,7 +52,7 @@ const IndexPage = (props) => {
     );
   }
 
-  console.log(data);
+  // console.log(data);
 
   const site = (data || {}).site;
   const postNodes = (data || {}).posts

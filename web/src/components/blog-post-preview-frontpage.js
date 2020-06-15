@@ -5,7 +5,6 @@ import BlogPostPreview from "./blog-post-preview";
 import styles from "./blog-post-preview-frontpage.module.css";
 
 function BlogPostPreviewFrontpage(props) {
-  console.log(props);
   return (
     <div className={styles.root + " w-full container mx-auto"}>
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}

@@ -4,6 +4,9 @@ import MainImage from "./MainImage";
 import ReactPlayer from "react-player";
 import InstagramEmbed from "react-instagram-embed";
 import LatexRenderer from "./Latex";
+import styles from "./serializers.module.css";
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
+deckDeckGoHighlightElement();
 
 const AuthorReference = ({ node }) => {
   if (node && node.author && node.author.name) {
@@ -22,7 +25,18 @@ const serializers = {
       return <InstagramEmbed url={node.url} className="container mx-auto mt-6 mb-6" />;
     },
     math: ({ node, isInline = false }) => <LatexRenderer isInline={isInline} latex={node.latex} />,
-  },
+    code: ({ node = {} }) => {
+      const { code, language } = node;
+      if (!code) {
+        return null;
+      }
+      return (
+        <deckgo-highlight-code language={language || "text"} class={styles.codeHighlight}>
+          <code slot="code">{code}</code>
+        </deckgo-highlight-code>
+      );
+    }
+  }
 };
 
 export default serializers;

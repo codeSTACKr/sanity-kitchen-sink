@@ -4,7 +4,7 @@ import {
   mathInlineIcon,
   mathIcon,
   highlightIcon,
-  highlightRender,
+  highlightRender
 } from '../components/PortableTextEditorComponents'
 
 export default {
@@ -88,6 +88,10 @@ export default {
     },
     { type: 'instagram' },
     { type: 'videoEmbed' },
-    { type: 'math', icon: mathIcon, title: 'Math block' }
+    { type: 'math', icon: mathIcon, title: 'Math block' },
+    {
+      type: 'code',
+      title: 'Code Block'
+    }
   ]
 }

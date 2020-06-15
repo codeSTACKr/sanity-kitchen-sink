@@ -1,0 +1,6 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap"); */
+
+.codeHighlight {
+  --deckgo-highlight-code-scroll: auto;
+  /* --deckgo-highlight-code-font-family: "Fira Code", monospace; */
+}
