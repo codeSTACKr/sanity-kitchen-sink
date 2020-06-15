@@ -9,6 +9,7 @@ import AuthorList from "./author-list";
 import styles from "./blog-post.module.css";
 
 function BlogPost(props) {
+  console.log(props);
   const { _rawBody, authors, categories, title, mainImage, publishedAt, customHtml } = props;
   return (
     <article className={styles.root}>
