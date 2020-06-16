@@ -10,11 +10,18 @@ function BlogPostPreviewFrontpage(props) {
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
       <ul className={styles.grid}>
         {props.nodes &&
-          props.nodes.map((node) => (
-            <li key={node.id}>
-              <BlogPostPreview {...node} isInList />
-            </li>
-          ))}
+          props.nodes.map(node => {
+            // if (
+            //   node.id !== "289f253d-db24-52a5-a5e3-5da9be6e43a8" &&
+            //   node.id !== "add229a6-acff-5e06-b6ec-d97eec72a52a"
+            // ) {
+            return (
+              <li key={node.id}>
+                <BlogPostPreview {...node} isInList />
+              </li>
+            );
+            // }
+          })}
       </ul>
       {props.browseMoreHref && (
         <div className={styles.browseMoreNav}>
@@ -28,7 +35,7 @@ function BlogPostPreviewFrontpage(props) {
 BlogPostPreviewFrontpage.defaultProps = {
   title: "",
   nodes: [],
-  browseMoreHref: "",
+  browseMoreHref: ""
 };
 
 export default BlogPostPreviewFrontpage;

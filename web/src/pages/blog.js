@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture,
+  filterOutDocsPublishedInTheFuture
 } from "../lib/helpers";
 import BlogPostPreviewList from "../components/blog-post-preview-list";
 import BlogPostPreviewGrid from "../components/blog-post-preview-grid";
@@ -20,7 +20,13 @@ export const query = graphql`
     posts: allSanityPost(
       limit: 6
       sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+      filter: {
+        slug: { current: { ne: null } }
+        publishedAt: { ne: null }
+        _id: {
+          nin: ["236730cf-5219-49b5-bfe8-bce5bb217bc3", "2a5a6f76-ae99-478a-8a50-31bd88d13f3e"]
+        }
+      }
     ) {
       edges {
         node {
@@ -41,7 +47,7 @@ export const query = graphql`
   }
 `;
 
-const IndexPage = (props) => {
+const IndexPage = props => {
   const { data, errors } = props;
 
   if (errors) {
@@ -57,13 +63,13 @@ const IndexPage = (props) => {
   const site = (data || {}).site;
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts)
-      .filter(filterOutDocsWithoutSlugs)
-      .filter(filterOutDocsPublishedInTheFuture)
+        .filter(filterOutDocsWithoutSlugs)
+        .filter(filterOutDocsPublishedInTheFuture)
     : [];
 
   if (!site) {
     console.warn(
-      'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.',
+      'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
     );
   }
 
@@ -76,9 +82,7 @@ const IndexPage = (props) => {
       />
       <Container>
         <h1 hidden>Welcome to {site.title}</h1>
-        <div className="py-6">
-          {postNodes && <BlogPostPreviewList nodes={postNodes} />}
-        </div>
+        <div className="py-6">{postNodes && <BlogPostPreviewList nodes={postNodes} />}</div>
       </Container>
     </Layout>
   );
