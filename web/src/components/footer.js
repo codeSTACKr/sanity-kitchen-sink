@@ -25,8 +25,11 @@ const Footer = ({ siteTitle }) => (
               </a>
             </li>
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-              <a href="#" className="no-underline hover:underline text-gray-600 hover:text-orange">
-                Course
+              <a
+                href="courses.codeSTACKr.com"
+                className="no-underline hover:underline text-gray-600 hover:text-orange"
+              >
+                Courses
               </a>
             </li>
           </ul>
