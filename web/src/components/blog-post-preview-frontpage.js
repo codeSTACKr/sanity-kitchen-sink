@@ -7,7 +7,7 @@ import styles from "./blog-post-preview-frontpage.module.css";
 function BlogPostPreviewFrontpage(props) {
   return (
     <div className={styles.root + " w-full container mx-auto"}>
-      {props.title && <h2 className={styles.headline}>{props.title}</h2>}
+      <h2 className={styles.headline}>Most Recent Posts</h2>
       <ul className={styles.grid}>
         {props.nodes &&
           props.nodes.map(node => {

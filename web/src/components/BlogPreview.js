@@ -2,7 +2,7 @@ import React from "react";
 import {
   mapEdgesToNodes,
   filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture,
+  filterOutDocsPublishedInTheFuture
 } from "../lib/helpers";
 
 import BlogPostPreviewFrontpage from "../components/blog-post-preview-frontpage";
@@ -12,23 +12,19 @@ import GraphQLErrorList from "../components/graphql-error-list";
 import { getFluidGatsbyImage } from "gatsby-source-sanity";
 import clientConfig from "../../client-config";
 
-const BlogPreview = (props) => {
+const BlogPreview = props => {
   const { posts, data, errors } = props;
 
-  console.log(posts);
-
   if (errors) {
-    return (
-      <GraphQLErrorList errors={errors} />
-    );
+    return <GraphQLErrorList errors={errors} />;
   }
 
   // const site = (data || {}).site;
   // const postNodes = (data || {}).posts
   const postNodes = posts
     ? mapEdgesToNodes(posts)
-      .filter(filterOutDocsWithoutSlugs)
-      .filter(filterOutDocsPublishedInTheFuture)
+        .filter(filterOutDocsWithoutSlugs)
+        .filter(filterOutDocsPublishedInTheFuture)
     : [];
 
   // if (!site) {

@@ -7,12 +7,12 @@ const MainImage = ({ mainImage, width = 1200 }) => {
     mainImage &&
     imageUrlFor(buildImageObj(mainImage))
       .width(width)
-      .height(Math.floor((9 / 16) * width))
+      // .height(Math.floor((9 / 16) * width))
       .fit("crop")
       .auto("format")
       .url();
 
-  return imgUrl ? <img src={imgUrl} alt={mainImage.alt || ""} /> : <></>;
+  return imgUrl ? <img src={imgUrl} alt={mainImage.alt || ""} className="pt-2" /> : <></>;
 };
 
 export default MainImage;
