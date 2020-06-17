@@ -18,15 +18,8 @@ export const query = graphql`
       title
     }
     posts: allSanityPost(
-      limit: 6
       sort: { fields: [publishedAt], order: DESC }
-      filter: {
-        slug: { current: { ne: null } }
-        publishedAt: { ne: null }
-        _id: {
-          nin: ["236730cf-5219-49b5-bfe8-bce5bb217bc3", "2a5a6f76-ae99-478a-8a50-31bd88d13f3e"]
-        }
-      }
+      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
     ) {
       edges {
         node {

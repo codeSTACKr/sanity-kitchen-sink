@@ -52,6 +52,7 @@
   border-radius: 0 0 1em 1em;
   box-shadow: 0 6px 2px rgba(0, 0, 0, 0.3);
   padding: 1em;
+  height: 265px;
 }
 
 .title {
@@ -75,6 +76,20 @@
   @nest & strong {
     font-weight: 600;
   }
+  position: relative;
+  height: 8em;
+  overflow: hidden;
+  margin-bottom: 1em;
+}
+.excerpt::after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 70%;
+  height: 1.2em;
+  background: linear-gradient(to right, rgba(17, 17, 17, 0), rgb(17, 17, 17) 50%);
 }
 
 .date {
