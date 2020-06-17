@@ -8,13 +8,10 @@ function BlogPostPreviewGrid(props) {
   return (
     <div className={styles.root}>
       {props.title && <h2 className={styles.headline}>{props.title}</h2>}
-      <ul
-        className={styles.grid +
-          " sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}
-      >
+      <ul className={styles.grid + " sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"}>
         {props.nodes &&
-          props.nodes.map((node) => (
-            <li key={node.id}>
+          props.nodes.map(node => (
+            <li key={node.id} className={styles.hover}>
               <BlogPostPreview {...node} isInList />
             </li>
           ))}
@@ -31,7 +28,7 @@ function BlogPostPreviewGrid(props) {
 BlogPostPreviewGrid.defaultProps = {
   title: "",
   nodes: [],
-  browseMoreHref: "",
+  browseMoreHref: ""
 };
 
 export default BlogPostPreviewGrid;

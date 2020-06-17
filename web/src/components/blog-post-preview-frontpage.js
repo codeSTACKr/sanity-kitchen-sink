@@ -16,7 +16,7 @@ function BlogPostPreviewFrontpage(props) {
             //   node.id !== "add229a6-acff-5e06-b6ec-d97eec72a52a"
             // ) {
             return (
-              <li key={node.id}>
+              <li key={node.id} className={styles.hover}>
                 <BlogPostPreview {...node} isInList />
               </li>
             );
