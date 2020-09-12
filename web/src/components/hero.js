@@ -4,7 +4,7 @@ import clientConfig from "../../client-config";
 import CTALink from "./CTALink";
 
 import { getFluidGatsbyImage } from "gatsby-source-sanity";
-const maybeImage = illustration => {
+const maybeImage = (illustration) => {
   let img = null;
   if (illustration && illustration.image && illustration.image.asset && !illustration.disabled) {
     const fluidProps = getFluidGatsbyImage(
@@ -65,7 +65,9 @@ function Hero(props) {
         )} */}
       </div>
       {/* Right col */}
-      <div className="w-full md:w-3/5 py-6 text-center">{img}</div>
+      <div className="w-full md:w-3/5 py-6 text-center">
+        <a href="https://courses.codestackr.com/vs-code-superhero">{img}</a>
+      </div>
     </div>
   );
 }
