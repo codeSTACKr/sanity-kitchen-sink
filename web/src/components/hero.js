@@ -66,7 +66,7 @@ function Hero(props) {
       </div>
       {/* Right col */}
       <div className="w-full md:w-3/5 py-6 text-center">
-        <a href="https://courses.codestackr.com/vs-code-superhero">{img}</a>
+        <a href="https://vscodehero.com">{img}</a>
       </div>
     </div>
   );
