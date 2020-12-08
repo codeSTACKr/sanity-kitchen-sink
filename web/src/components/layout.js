@@ -7,7 +7,7 @@ class Layout extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      scrolled: false
+      scrolled: false,
     };
   }
 
@@ -36,7 +36,7 @@ class Layout extends React.Component {
       showNav,
       siteTitle,
       navMenuItems,
-      textWhite = true
+      textWhite = true,
     } = this.props;
     const { scrolled } = this.state;
     const defaultItems = [
@@ -45,22 +45,22 @@ class Layout extends React.Component {
         kind: "link",
         link: null,
         route: "/blog",
-        landingPageRoute: null
+        landingPageRoute: null,
       },
       {
         title: "About",
         kind: "link",
         link: null,
         route: "/about",
-        landingPageRoute: null
+        landingPageRoute: null,
       },
       {
         title: "Courses",
         kind: "button",
-        link: "codestackr.com/learn",
+        link: "https://vsCodeHero.com",
         route: null,
-        landingPageRoute: null
-      }
+        landingPageRoute: null,
+      },
     ];
     const navItems = navMenuItems ? navMenuItems : defaultItems;
 
