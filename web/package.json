@@ -45,7 +45,7 @@
     "gatsby-plugin-sharp": "^2.6.9",
     "gatsby-remark-highlight-code": "^1.4.0",
     "gatsby-source-filesystem": "^2.3.8",
-    "gatsby-transformer-remark": "^2.8.13",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.5.3",
     "katex": "^0.11.1",
     "react-instagram-embed": "^1.5.0",
